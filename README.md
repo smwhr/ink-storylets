@@ -47,7 +47,7 @@ This function will be called on each item of the storylet list and must return `
 == function conditions(storylet)
 {storylet: 
 	- st_magician: ~ return KnowOfMagician and not meet_magician
-	- st_witch: ~ return KnowOfWith and WitchNotAngry
+	- st_witch: ~ return KnowOfWitch and WitchNotAngry
 	- st_kitchen: ~ return VeryHungry and HasRecipe
 	- st_music: ~ return HasRecord
 	- else: false
