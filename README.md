@@ -8,6 +8,8 @@
 
 This framework does not rely on any external function and will function natively in any player.
 
+[Try a demo on itch.io](https://smwhr.itch.io/ink-storylets)
+
 ## How to use
 
 Import the `include/storylet.ink` file and add the import in your main file
@@ -169,3 +171,6 @@ They lived happily ever after.
 
 ```
 
+## Full implementation
+
+The `Castle.ink` in this repository is the entrypoint of a complete implementation.
