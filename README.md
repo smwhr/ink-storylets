@@ -23,7 +23,7 @@ This file provide the basic functionalities to handle the storylets.
 The framework relies on 1 LIST and 3 functions (actually 1 knot and 2 functions) :  
 (see `include/database.ink` for a complete example)
 
-### the LIST
+### 1. The LIST
 
 This would be the LIST of all storylets.
 
@@ -38,7 +38,7 @@ LIST Storylets = st_magician, // story at the top has more priority
 
 The stories that are listed first have more priority and will be evaluated and displayed first.
 
-### the conditioning function
+### 2. The conditioning function
 
 This function will be called on each item of the storylet list and must return `true` or `false` if the storylet is available or not. This works really well with a [Knowledge System](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md#7-long-example-crime-scene)
 
@@ -55,7 +55,7 @@ This function will be called on each item of the storylet list and must return `
 
 ```
 
-### the diverting knot
+### 3. The diverting knot
 
 This knot will be the chef d'orchestre of the storylets. It will be called upon a storylet choice. For a given storylet, it must trigger a tunnel to the actual story code. 
 
@@ -81,7 +81,7 @@ This knot will be the chef d'orchestre of the storylets. It will be called upon 
 
 The system is flexible enough that you can either call a simple tunnel, a chain of tunnels, knot with parameters, add extra conditions etc.
 
-### the verbose function
+### 4. The verbose function
 
 This function will be called on item of the storylet list that will be displayed. For each item, it must return a string that will be the actual text of the choice.
 
@@ -104,13 +104,14 @@ When used with an external system, if the storylet choices are not displayed as 
 #### Example :
 ```
 == function choice_text(storylet)
-    {storylet:
+    STORYLET: <> {storylet:
         - st_magician: The magician is waiting
         - st_witch: The witch summoned you {|again}
         - st_kitchen: You feel hungry
         - st_music: Wait and listen to some music
     }
 ```
+This will prefix all the storylet choices with `STORYLET: `.
 
 ### and now what ?
 
