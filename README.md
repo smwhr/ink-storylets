@@ -81,6 +81,21 @@ This knot will be the chef d'orchestre of the storylets. It will be called upon 
 
 The system is flexible enough that you can either call a simple tunnel, a chain of tunnels, knot with parameters, add extra conditions etc.
 
+To fully use the system, Storylet knots __should__ be written as tunnels otherwise, the flow won't be able to return.
+
+#### Example :
+```
+~ BoredOfMusic = false
+== listen_music
+    You listen to {&some Mozart|Toxic by Britney Spears|some Coltrane}
+    {listen_music > 10:
+        You get so bored of music.
+        ~ BoredOfMusic = true
+    }
+    ->-> // this is a tunnel end
+
+```
+
 ### 4. The verbose function
 
 This function will be called on item of the storylet list that will be displayed. For each item, it must return a string that will be the actual text of the choice.
